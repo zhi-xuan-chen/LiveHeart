@@ -1,8 +1,86 @@
 # LiveHeart
 
-3D hand-gesture interactive pink heart experience (Three.js + MediaPipe Hands).
+## 中文版
 
-## Local Run
+LiveHeart 是一个“会呼吸的 3D 粉红爱心”互动网页。  
+你张开手，它会像心动一样碎片绽放；你握拳，它又慢慢回到饱满爱心。  
+上传你们的照片和音乐后，它就变成一份可以一起玩的数字浪漫小礼物。
+
+如果你正在给女朋友准备一点特别的惊喜，这个项目适合你。  
+不是“发一句晚安”，而是“给她一个会动、会回应、会发光的爱心”。
+
+### 功能亮点
+
+- 手势交互：张开、握拳、捏合切换形态。
+- 3D 爱心粒子：粉色系渐变 + 爆发过渡 + 发光效果。
+- 浪漫音效：形态切换时触发内置音效。
+- 照片融合：可上传照片嵌入爱心空间。
+- 音乐驱动：可上传音乐，粒子随低频律动。
+
+### 本地运行
+
+```bash
+npm install
+npm run dev
+```
+
+打开 `http://localhost:5173`。
+
+### 免费上线（GitHub Pages）
+
+项目已内置 GitHub Actions 自动部署。
+
+1. 将项目推送到 GitHub 仓库的 `main` 分支。
+2. 打开仓库 `Settings` -> `Pages`。
+3. 在 `Build and deployment` 中将 `Source` 设置为 `GitHub Actions`。
+4. 推送代码后等待 Actions 成功。
+5. 访问 `https://<你的用户名>.github.io/<你的仓库名>/`。
+
+### 温馨提示
+
+- 摄像头权限需要 HTTPS（GitHub Pages 默认支持 HTTPS）。
+- 首次进入页面请允许摄像头，并点击一次页面以解锁音频。
+- 建议在光线较好的环境中使用，手势识别更稳定。
+
+### 送女朋友使用指南
+
+1. 提前准备：
+- 挑 8-20 张你们的合照（不要全是同构图，穿插旅行/日常/节日瞬间）。
+- 准备 1 首你们都熟悉的歌（前奏温柔、低频明显更有氛围）。
+- 用笔记本摄像头测试一次手势，确保光线充足。
+
+2. 演示流程（约 30 秒）：
+- 开场：先让她看到静态粉红爱心。
+- 第 1 步：张开手，触发爱心碎片绽放。
+- 第 2 步：捏合，拉近一张照片做“回忆点名”。
+- 第 3 步：握拳，让爱心重新聚合。
+- 收尾：把设备递给她，让她自己玩一轮。
+
+3. 氛围加分项：
+- 把房间主灯调暗，留一盏暖色小灯。
+- 全屏展示，避免浏览器工具栏破坏沉浸感。
+- 把上传按钮和音乐按钮先操作好，演示时减少等待。
+
+---
+
+## English Version
+
+LiveHeart is an interactive 3D pink-heart web experience.  
+Open your hand and it bursts like a heartbeat; close your fist and it gently reforms.  
+With your photos and music, it becomes a playful digital love gift you can share.
+
+If you are planning a sweet surprise for your girlfriend, this is a great fit.  
+Not just “good night” in text, but a glowing heart that reacts to your gestures.
+
+### Highlights
+
+- Gesture controls: open hand, fist, and pinch transitions.
+- 3D heart particles: rich pink gradients, bloom, and shard-like transitions.
+- Romantic sound cues: built-in transition sound effects.
+- Photo cloud: upload photos into the heart scene.
+- Music reactive: upload songs and let bass drive the motion.
+
+### Local Run
 
 ```bash
 npm install
@@ -11,20 +89,37 @@ npm run dev
 
 Open `http://localhost:5173`.
 
-## Free Deploy (GitHub Pages)
+### Free Deployment (GitHub Pages)
 
-This repo is configured for GitHub Pages auto-deploy using GitHub Actions.
+Auto-deploy is already configured via GitHub Actions.
 
-1. Create a GitHub repo and push this project to branch `main`.
-2. In GitHub repo settings:
-   - `Settings` -> `Pages` -> `Build and deployment`
-   - Set `Source` to `GitHub Actions`.
-3. Push to `main` (or manually trigger workflow in `Actions` tab).
-4. After workflow succeeds, open:
-   - `https://<your-user>.github.io/<your-repo>/`
+1. Push this project to the `main` branch of your GitHub repo.
+2. Go to `Settings` -> `Pages`.
+3. Set `Build and deployment` -> `Source` to `GitHub Actions`.
+4. Push changes and wait for the workflow to pass.
+5. Visit `https://<your-user>.github.io/<your-repo>/`.
 
-## Notes
+### Notes
 
-- Camera access requires HTTPS (GitHub Pages is HTTPS by default).
-- Users need to allow camera permission and interact with the page once to unlock audio.
+- Camera access requires HTTPS (GitHub Pages provides HTTPS by default).
+- On first visit, allow camera permission and click once to unlock audio.
+- Better lighting usually improves hand-tracking stability.
 
+### Surprise Guide (For Your Girlfriend)
+
+1. Prep before sharing:
+- Select 8-20 photos with variety (trip moments, daily life, special dates).
+- Pick one meaningful song with a soft intro and clear bass.
+- Test gestures once in good lighting to avoid awkward misses.
+
+2. 30-second demo flow:
+- Start with the calm pink heart scene.
+- Step 1: Open hand to trigger the shard-burst transition.
+- Step 2: Pinch to focus one photo and call out that memory.
+- Step 3: Fist to reform the heart.
+- Finish by handing control to her.
+
+3. Atmosphere tips:
+- Dim the main room lights and keep one warm side light.
+- Use full-screen mode for better immersion.
+- Preload photos and music so the moment feels smooth.
