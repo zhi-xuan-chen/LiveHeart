@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LiveHeart - 3D Pink Heart</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    
+    <div id="ui-container">
+      <div id="loading">Loading Models & Hand Tracking...</div>
+
+      <input type="file" id="photo-upload" accept="image/*" multiple hidden />
+      <input type="file" id="music-upload" accept="audio/*" hidden />
+
+      <aside id="control-panel">
+        <h1>LiveHeart</h1>
+        <p id="subtitle">手势控制 3D 粉红爱心 · 照片 · 音乐互动</p>
+        <p id="status-text">等待摄像头权限...</p>
+
+        <div id="actions">
+          <button id="upload-btn" class="ui-btn">上传照片</button>
+          <button id="music-upload-btn" class="ui-btn">上传音乐</button>
+          <button id="play-btn" class="ui-btn">播放音乐</button>
+          <button id="reset-btn" class="ui-btn">重置场景</button>
+        </div>
+
+        <div id="gesture-guide">
+          <div>手势说明</div>
+          <div>握拳: 回到爱心形态</div>
+          <div>张开: 爱心碎片爆发</div>
+          <div>捏合: 聚焦照片</div>
+        </div>
+      </aside>
+
+      <div id="gesture-debug">
+        Gesture: <span id="gesture-text">NONE</span><br>
+        State: <span id="state-text">TREE</span>
+      </div>
+
+      <video id="webcam-video" playsinline muted autoplay></video>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

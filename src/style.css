@@ -1,0 +1,194 @@
+:root {
+  --gold: #ff87c8;
+  --green: #3c0e2e;
+  --ink: #ffeef7;
+  --panel: rgba(36, 8, 27, 0.66);
+  --panel-border: rgba(255, 135, 200, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  color: var(--ink);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(1100px 700px at 80% 15%, rgba(255, 96, 176, 0.28), transparent 70%),
+    radial-gradient(1000px 650px at 10% 85%, rgba(246, 95, 163, 0.25), transparent 65%),
+    #120815;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+#ui-container {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+#loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold);
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+#control-panel {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: min(390px, calc(100vw - 40px));
+  border: 1px solid var(--panel-border);
+  border-radius: 18px;
+  background: linear-gradient(145deg, rgba(11, 31, 23, 0.8), var(--panel));
+  backdrop-filter: blur(10px);
+  padding: 16px 16px 14px;
+  box-shadow: 0 16px 60px rgba(0, 0, 0, 0.42);
+  pointer-events: auto;
+}
+
+#control-panel h1 {
+  color: var(--gold);
+  font-size: 1.6rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+#subtitle {
+  color: rgba(232, 246, 239, 0.8);
+  font-size: 0.86rem;
+  margin-bottom: 10px;
+}
+
+#status-text {
+  color: #ffb7db;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 0.87rem;
+  margin-bottom: 12px;
+}
+
+#actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.ui-btn {
+  border: 1px solid var(--panel-border);
+  color: var(--gold);
+  background: rgba(11, 30, 22, 0.72);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.ui-btn:hover {
+  background: rgba(216, 189, 103, 0.16);
+  box-shadow: 0 6px 20px rgba(216, 189, 103, 0.24);
+  transform: translateY(-1px);
+}
+
+#gesture-guide {
+  border-top: 1px solid rgba(216, 189, 103, 0.22);
+  padding-top: 10px;
+  display: grid;
+  gap: 4px;
+  color: rgba(255, 238, 247, 0.9);
+  font-size: 0.84rem;
+}
+
+#gesture-guide div:first-child {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+#gesture-debug {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.34);
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.78rem;
+  color: #fff;
+}
+
+#gesture-debug span {
+  color: var(--gold);
+}
+
+#webcam-video {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 180px;
+  height: 130px;
+  border-radius: 14px;
+  object-fit: cover;
+  transform: scaleX(-1);
+  border: 1px solid rgba(216, 189, 103, 0.6);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.45);
+  opacity: 0.9;
+  pointer-events: auto;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.55; }
+  50% { opacity: 1; }
+  100% { opacity: 0.55; }
+}
+
+@media (max-width: 720px) {
+  #control-panel {
+    left: 12px;
+    top: 12px;
+    width: calc(100vw - 24px);
+    padding: 14px;
+  }
+
+  #actions {
+    grid-template-columns: 1fr;
+  }
+
+  #gesture-debug {
+    top: auto;
+    bottom: 164px;
+    right: 12px;
+  }
+
+  #webcam-video {
+    right: 12px;
+    bottom: 12px;
+    width: 140px;
+    height: 100px;
+  }
+}
